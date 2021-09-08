@@ -4,12 +4,12 @@ export const MenuList = [
     url: "/",
   },
   {
-    title: "About us",
-    url: "/shop",
+    title: "Signin",
+    url: "/login",
   },
   {
-    title: "Contact",
-    url: "/contact",
+    title: "About Us",
+    url: "/",
   },
   {
     title: "Admin",

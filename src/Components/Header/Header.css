@@ -1,0 +1,23 @@
+.carousel_wrapper {
+  height: 80vh;
+  position: relative;
+  padding: 25px;
+}
+.rec .rec-arrow-left {
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  z-index: 1;
+}
+.rec .rec-arrow-right {
+  position: absolute;
+  top: 40%;
+  right: 5%;
+  z-index: 1;
+}
+.rec.rec-dot {
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+  background-color: grey;
+}
