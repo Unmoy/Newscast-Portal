@@ -1,8 +1,8 @@
 import React from "react";
 import { useHistory } from "react-router";
-import "./NewsSection.css";
+import "./CategoryCard.css";
 
-const NewsSection = ({ news }) => {
+const CategoryCard = ({ news }) => {
   const { _id, title, description, image, category, author } = news;
 
   const history = useHistory();
@@ -28,4 +28,4 @@ const NewsSection = ({ news }) => {
   );
 };
 
-export default NewsSection;
+export default CategoryCard;

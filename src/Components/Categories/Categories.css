@@ -1,4 +1,4 @@
-.news_container {
+.category_news {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -6,4 +6,11 @@
   padding: 20px 0;
   width: 80%;
   background-color: #f5f5f5;
+}
+.category_selector {
+  width: 50%;
+  margin: 20px auto;
+}
+.category_selector option {
+  padding: 200px;
 }

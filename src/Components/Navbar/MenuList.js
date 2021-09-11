@@ -8,8 +8,8 @@ export const MenuList = [
     url: "/login",
   },
   {
-    title: "About Us",
-    url: "/",
+    title: "Categories",
+    url: "/categories",
   },
   {
     title: "Admin",

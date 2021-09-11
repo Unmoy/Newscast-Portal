@@ -6,37 +6,30 @@ const Content = () => {
   const [newsData, setnewsData] = useState([]);
 
   useEffect(() => {
-    fetch("https://safe-atoll-13917.herokuapp.com/shownews")
+    fetch("http://localhost:5000/shownews")
       .then((res) => res.json())
-      .then((data) => setnewsData(data))
+      .then((data) => {
+        setnewsData(data);
+        console.log(data);
+      })
       .catch((error) => {
         console.error(error);
       });
   }, []);
 
-  const filterItem = (selected) => {
-    const updatedItem = newsData.filter((item) => {
-      return item.category === selected;
-    });
-    setnewsData(updatedItem);
-  };
   return (
     <>
-      <div className="categ">
-        <button onClick={() => filterItem("business")}>Business</button>
-        <button onClick={() => filterItem("real estate")}>Real Estate</button>
-        <button onClick={() => filterItem("sports")}>Sports</button>
-        <button onClick={() => filterItem("politics")}>Politics</button>
-        <button onClick={() => filterItem("life")}>Life</button>
-        <button onClick={() => filterItem("international")}>
-          International
-        </button>
-        <button onClick={() => filterItem("entertainment")}>
-          Entertainment
-        </button>
-        <button onClick={() => filterItem("")}>All</button>
-      </div>
-
+      <h1
+        style={{
+          fontSize: "40px",
+          textAlign: "center",
+          fontFamily: "Poppins",
+          color: " #ff2500",
+          marginTop: "50px",
+        }}
+      >
+        Latest News
+      </h1>
       <div className="news_container">
         {newsData.map((news) => (
           <NewsSection news={news}></NewsSection>

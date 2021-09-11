@@ -22,21 +22,23 @@ const AddNews = () => {
     formData.append("file", file);
     formData.append("title", news.title);
     formData.append("description", news.description);
-    formData.append("category", news.category);
+    formData.append("category", news.category.toLowerCase());
     formData.append("author", news.author);
 
-    fetch("https://safe-atoll-13917.herokuapp.com/addnews", {
+    fetch("http://localhost:5000/addnews", {
       method: "POST",
       body: formData,
     })
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        alert("News added Succesfully");
       })
       .catch((error) => {
         console.error(error);
       });
     e.preventDefault();
+    e.target.reset();
   };
   return (
     <div className="news_form">
@@ -53,7 +55,7 @@ const AddNews = () => {
         <label className="form-label">News description:</label>
         <input
           onBlur={handleBlur}
-          className="form-control editor_box "
+          className="form-control editor_box"
           type="text"
           name="description"
           placeholder="news description"
@@ -61,15 +63,15 @@ const AddNews = () => {
         <label className="form-label">News Category:</label>
         <input
           onBlur={handleBlur}
-          className="form-control editor_box "
+          className="form-control editor_box"
           type="text"
           name="category"
-          placeholder="news category"
+          placeholder="Please turn off capslock"
         />
         <label className="form-label">News Author:</label>
         <input
           onBlur={handleBlur}
-          className="form-control editor_box "
+          className="form-control editor_box"
           type="text"
           name="author"
           placeholder="news author"
@@ -77,7 +79,7 @@ const AddNews = () => {
         <label className="form-label">News Image:</label>
         <input
           onChange={handleChange}
-          className="form-control editor_box "
+          className="form-control editor_box"
           name="file"
           id="formFileSm"
           type="file"

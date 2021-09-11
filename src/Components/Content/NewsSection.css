@@ -5,7 +5,6 @@
   background: #fff;
   overflow: hidden;
   margin: 20px;
-  /* border: 1px solid red; */
   border-radius: 20px;
 }
 .card_container:hover {
@@ -18,7 +17,7 @@
   padding: 10px;
 }
 .card_image img {
-  width: 80%;
+  max-width: 70%;
 }
 .card_content h2 {
   text-transform: uppercase;

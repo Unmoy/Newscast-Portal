@@ -8,6 +8,7 @@ import Login from "./Components/Authentication/Login";
 import Signup from "./Components/Authentication/Signup";
 import { AuthProvider } from "./Components/contexts/AuthContext";
 import PrivateRoute from "./Components/Authentication/PrivateRoute";
+import Categories from "./Components/Categories/Categories";
 
 function App() {
   return (
@@ -15,9 +16,9 @@ function App() {
       <Router>
         <Navbar></Navbar>
         <Switch>
-          <PrivateRoute exact path="/home">
+          <Route exact path="/home">
             <Home></Home>
-          </PrivateRoute>
+          </Route>
           <Route exact path="/">
             <Home></Home>
           </Route>
@@ -26,6 +27,9 @@ function App() {
           </PrivateRoute>
           <Route path="/fullnews/:id">
             <DetailsNews></DetailsNews>
+          </Route>
+          <Route path="/categories">
+            <Categories></Categories>
           </Route>
           <Route path="/login">
             <Login></Login>
