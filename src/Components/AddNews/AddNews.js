@@ -25,7 +25,7 @@ const AddNews = () => {
     formData.append("category", news.category.toLowerCase());
     formData.append("author", news.author);
 
-    fetch("http://localhost:5000/addnews", {
+    fetch("https://safe-atoll-13917.herokuapp.com/addnews", {
       method: "POST",
       body: formData,
     })

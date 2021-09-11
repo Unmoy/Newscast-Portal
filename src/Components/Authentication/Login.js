@@ -6,7 +6,7 @@ import "./Login.css";
 const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { login } = useAuth();
+  const { login, signInWithGoogle } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
@@ -21,6 +21,11 @@ const Login = () => {
       setError("Failed to sign in");
     }
     setLoading(false);
+  };
+  const handlegoogle = async () => {
+    setLoading(true);
+    await signInWithGoogle();
+    history.push("/");
   };
   return (
     <div className="loginform_conatainer">
@@ -40,6 +45,9 @@ const Login = () => {
             <Button className="w-100 mt-3 btn-warning" type="submit">
               Log In
             </Button>
+            <div className="google_btn">
+              <Button onClick={handlegoogle}> Google Sign In</Button>
+            </div>
           </Form>
         </Card.Body>
       </Card>

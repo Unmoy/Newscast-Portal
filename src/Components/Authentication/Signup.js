@@ -54,14 +54,14 @@ const Signup = () => {
             <Button className="w-100 mt-3 btn-warning" type="submit">
               Sign Up
             </Button>
+            <div className="google_btn">
+              <Button onClick={handlegoogle}> Google Sign In</Button>
+            </div>
           </Form>
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
         Already have an account? <Link to="/login">Log In</Link>
-      </div>
-      <div>
-        <Button onClick={handlegoogle}> Google Sign In</Button>
       </div>
     </div>
   );

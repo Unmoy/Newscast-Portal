@@ -6,7 +6,7 @@ const Content = () => {
   const [newsData, setnewsData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/shownews")
+    fetch("https://safe-atoll-13917.herokuapp.com/shownews")
       .then((res) => res.json())
       .then((data) => {
         setnewsData(data);

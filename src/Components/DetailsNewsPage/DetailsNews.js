@@ -9,7 +9,7 @@ const DetailsNews = () => {
   const { title, description } = singleNews;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/getNewsById/${id}`)
+    fetch(`https://safe-atoll-13917.herokuapp.com/getNewsById/${id}`)
       .then((res) => res.json())
       .then((data) => setSingleNews(data));
     window.scrollTo(0, 0);

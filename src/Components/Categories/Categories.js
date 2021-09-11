@@ -13,11 +13,12 @@ const Categories = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/categories?category=` + findItem)
+    fetch(
+      `https://safe-atoll-13917.herokuapp.com/categories?category=` + findItem
+    )
       .then((response) => response.json())
       .then((data) => {
         setFilteredItem(data);
-        console.log(data);
       })
       .catch((error) => {
         console.error(error);
@@ -36,11 +37,15 @@ const Categories = () => {
           <option value="politics">Politics</option>
         </select>
       </div>
-      <div className="category_news">
-        {filteredItem.map((news) => (
-          <CategoryCard key={news._id} news={news}></CategoryCard>
-        ))}
-      </div>
+      {filteredItem.length ? (
+        <div className="category_news">
+          {filteredItem.map((news) => (
+            <CategoryCard key={news._id} news={news}></CategoryCard>
+          ))}
+        </div>
+      ) : (
+        <h4 style={{ textAlign: "center" }}>Loading...</h4>
+      )}
     </div>
   );
 };

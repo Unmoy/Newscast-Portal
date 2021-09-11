@@ -28,9 +28,9 @@ function App() {
           <Route path="/fullnews/:id">
             <DetailsNews></DetailsNews>
           </Route>
-          <Route path="/categories">
+          <PrivateRoute path="/categories">
             <Categories></Categories>
-          </Route>
+          </PrivateRoute>
           <Route path="/login">
             <Login></Login>
           </Route>
