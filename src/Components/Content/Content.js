@@ -18,24 +18,14 @@ const Content = () => {
   }, []);
 
   return (
-    <>
-      <h1
-        style={{
-          fontSize: "40px",
-          textAlign: "center",
-          fontFamily: "Poppins",
-          color: " #ff2500",
-          marginTop: "50px",
-        }}
-      >
-        Latest News
-      </h1>
+    <div className="content_wrapper">
+      <h1>Latest News</h1>
       <div className="news_container">
         {newsData.map((news) => (
           <NewsSection news={news}></NewsSection>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

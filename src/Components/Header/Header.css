@@ -1,17 +1,16 @@
 .carousel_wrapper {
-  height: 80vh;
-  position: relative;
+  height: 90vh;
   padding: 25px;
 }
 .rec .rec-arrow-left {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 5%;
   z-index: 1;
 }
 .rec .rec-arrow-right {
   position: absolute;
-  top: 40%;
+  top: 50%;
   right: 5%;
   z-index: 1;
 }
